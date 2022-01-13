@@ -3,16 +3,20 @@
 print("Enter numbers. Enter 'done' when finished. ")
 
 number = input("enter a number: ")
-maxnum = float(number)
-minnum = float(number)
 count = 0
 total = 0
 
+if number == 'done':
+    quit()
+
+maxnum = float(number)
+minnum = float(number)
 while number != 'done':
-    if number == 'done':
-        quit()
-    else:
-        number = float(number)
+        try:
+            number = float(number)
+        except:
+            print("bad input. numbers only.")
+            quit()
         total += number
         count += 1
         if number > maxnum:
