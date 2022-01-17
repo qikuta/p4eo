@@ -5,7 +5,15 @@ email address). At the end of the program, print out the contents of your dictio
 """
 
 fhand = open("mbox.txt")
-
+domains = dict()
 for line in fhand:
     if line.startswith("From"):
-        
+        words = line.split()
+        try:
+            email = words[1]
+            domain = email[(email.find('@')+1):]
+            domains[domain] = domains.get(domain, 0) + 1
+        except:
+            print("ERROR")
+
+print(domains)
