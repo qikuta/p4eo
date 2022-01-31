@@ -35,7 +35,7 @@ while True:
     dataRecord += data.decode()
 mysock.close()
 
-#use the below code to check if 3000 characters actually print 
+#use the below code to check if 3000 characters actually print
 """
 position = 0
 for char in dataRecord[:3000]:
